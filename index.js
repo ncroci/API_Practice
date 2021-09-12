@@ -14,10 +14,6 @@ function apiFunction(datepicker_date) {
     let queryDate = "date=" + datepicker_date + "&";
 
     $.get(BASE_URL + queryDate + API_KEY, function(data) {
-        console.log(data);
-        //$('#photoDiv').append(`<img src ="${data.url}">`);
-        //$('#photoDiv').append(`<p>${data.title}`);
-
 
         $('#photoDiv').prepend(
             `
