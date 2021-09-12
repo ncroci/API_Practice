@@ -24,20 +24,30 @@ function apiFunction(datepicker_date) {
         </div>
         <div class="card-body">
             <div class="card">
-                <div class"row">
+            <div class="row">
+            <div class="col-sm-6">
+            <input type="text" id='${data.date}-input' class="form-control" placeholder="New Title">
+            </div>
+            <div class="col-sm-6">
+            <button id="${data.date}-update" onclick="updateTitle('${data.date}')" class="btn btn-primary form-control">Update Title</button>
+            </div>
+            </div>
+            <br>
+            <div class"row">
                     <div class="col">
                         <img id = "${data.date}-img"src ="${data.url}">
                     </div>
                 </div>
-                <input type="text" id='${data.date}-input' class="form-control" placeholder="New Title">
-            <button id="${data.date}-update" onclick="updateTitle('${data.date}')" class="btn btn-primary form-control">Update Title</button>
-            <button id="${data.date}-blur" onclick="invertPicture('${data.date}')" class="btn btn-primary form-control">Invert</button>
-            <button id="${data.date}-blur" onclick="blurPicture('${data.date}')" class="btn btn-primary form-control">Blur</button>
-            <button id="${data.date}-blur" onclick="satPicture('${data.date}')" class="btn btn-primary form-control">Saturate</button>
-            <button id="${data.date}-blur" onclick="revertPicture('${data.date}')" class="btn btn-primary form-control">Revert Back To Normal</button>
+                
+            <div class="row">
+            <button onclick="invertPicture('${data.date}')" class="btn btn-primary form-control btn-filter">Invert</button>
+            <button onclick="blurPicture('${data.date}')" class="btn btn-primary form-control btn-filter">Blur</button>
+            <button onclick="satPicture('${data.date}')" class="btn btn-primary form-control btn-filter">Saturate</button>
+            <button onclick="revertPicture('${data.date}')" class="btn btn-primary form-control btn-filter">Revert Back To Normal</button>
+            </div>
             </div>
         </div>
-    </div><br>`
+    </div>`
 
         );
     });

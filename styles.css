@@ -1,9 +1,14 @@
 .container {
-    background-color: #43455C;
+    background-color: #25274d;
 }
 
 .card {
-    background-color: #707793;
+    background-color: #aaabb8;
+}
+
+.card-header {
+    background-color: #464866;
+    ;
 }
 
 #photoDiv img {
@@ -14,20 +19,37 @@
     object-fit: cover;
 }
 
-#datePicker {
-    width: 200px;
-    top: 100px;
-}
-
-h1 {
-    text-align: center;
-    color: white;
-}
-
 .btn-danger {
     float: right;
 }
 
 h2 {
     float: left;
+    color: white;
+}
+
+.btn-primary {
+    background-color: #2e9cca;
+    border-color: #2e9cca;
+}
+
+.btn-primary:hover {
+    background-color: #29648A;
+    border-color: #29648A;
+}
+
+.btn-filter {
+    display: inline;
+    width: 20%;
+    margin: 2.5%;
+}
+
+#heading {
+    border: 3px #2e9cca solid;
+    margin: 20px 20px;
+    background-color: black;
+    border-radius: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    color: white;
 }
