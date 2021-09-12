@@ -2,6 +2,16 @@
 const BASE_URL = 'https://api.nasa.gov/planetary/apod?';
 const API_KEY = 'api_key=YYkPJh1u8fnlnloPQPJL4iYmw778pTt69fPTzhE1';
 
+//this calculates what today is
+var today = new Date();
+var dd = String(today.getDate()).padStart(2, '0');
+var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+var yyyy = today.getFullYear();
+
+//this puts today's date into the html datePicker element as the max value, so no one can pick a future date
+today = yyyy + '-' + mm + '-' + dd;
+$("#datePicker").attr('max', today);
+
 //button that stores the date to pull up picture card
 findButton.addEventListener("click", () => {
     //when button is clicked, the date value in YYYY-MM-DD form becomes the variable
@@ -19,7 +29,7 @@ function apiFunction(datepicker_date) {
             `
         <div id="${data.date}-div" class="card">
             <div class="card-header">
-                <h2 id="${data.date}-header">${data.title}</h2>
+                <h2 id="${data.date}-header">${data.date}: ${data.title}</h2>
                 <button id="${data.date}-delete" class="btn btn-danger" onclick="deletePicture('${data.date}')">Delete</button>
             </div>
         <div class="card-body">
@@ -47,7 +57,8 @@ function apiFunction(datepicker_date) {
             </div>
         </div>
     </div>
-</div>`
+</div>
+        `
         );
     });
 }
