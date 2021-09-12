@@ -1,0 +1,33 @@
+.container {
+    background-color: #43455C;
+}
+
+.card {
+    background-color: #707793;
+}
+
+#photoDiv img {
+    display: block;
+    margin: auto;
+    width: 75%;
+    height: 75%;
+    object-fit: cover;
+}
+
+#datePicker {
+    width: 200px;
+    top: 100px;
+}
+
+h1 {
+    text-align: center;
+    color: white;
+}
+
+.btn-danger {
+    float: right;
+}
+
+h2 {
+    float: left;
+}
