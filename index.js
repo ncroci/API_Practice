@@ -21,10 +21,11 @@ findButton.addEventListener("click", () => {
 //main function
 function apiFunction(datepicker_date) {
     //puts the date into a string that the url can read
+
     let queryDate = "date=" + datepicker_date + "&";
     //this creates the api url by combining the base, then the date selected, then the personal API key
     $.get(BASE_URL + queryDate + API_KEY, function(data) {
-
+        console.log(data);
         $('#photoDiv').prepend(
             `
         <div id="${data.date}-div" class="card">
@@ -64,13 +65,15 @@ function apiFunction(datepicker_date) {
 }
 
 function updateTitle(id) {
-    let newHeader = $(`#${id}-input`).val();
-    //deletes the current header
-    $(`#${id}-header`).empty();
-    //aplplies new title to picture
-    $(`#${id}-header`).append(newHeader);
-    //resets the value to nothing after button is clicked
-    $('input:text').val('');
+    if ($(`#${id}-input`).val() !== '') {
+        let newHeader = $(`#${id}-input`).val();
+        //deletes the current header
+        $(`#${id}-header`).empty();
+        //aplplies new title to picture
+        $(`#${id}-header`).append(newHeader);
+        //resets the value to nothing after button is clicked
+        $('input:text').val('');
+    }
 }
 
 function deletePicture(id) {
